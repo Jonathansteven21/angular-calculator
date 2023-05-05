@@ -1,0 +1,31 @@
+
+    <div class="row">
+        <h2><strong>Plus</strong></h2>
+    </div>
+    
+    <div class="row col-7">
+        <div class="col">    
+            <label> <b>First Number</b></label>
+            <input type="number" class="form-control" [(ngModel)]='firstNumber' (input)='validateData($event)' [disabled]='resultDiv'/>
+        </div>
+        <div class="col">    
+        <label><b> Second Number </b></label>
+            <input type="number" class="form-control" [(ngModel)]='secondNumber' (input)='validateData($event)' [disabled]='resultDiv'/>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary " [disabled]='disabledButton' (click)='plusSolve()'>Calculate</button>
+        </div>
+    </div>
+    
+    <div class="row" *ngIf="resultDiv">
+        <p><b>Result: </b></p>
+    </div>
+    <div class="row col result" *ngIf="resultDiv">
+        <div class="col">
+        <input type="string" class="form-label" [(ngModel)]='stringResult' disabled/>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary " (click)='resetPlus()'>Reset</button>
+        </div>
+            
+    </div>
